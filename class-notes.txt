@@ -1,0 +1,95 @@
+Docker
+
+$ sudo yum update -y
+```
+$ sudo amazon-linux-extras install docker -y
+```
+$ sudo systemctl start docker
+```
+$ sudo systemctl enable docker
+```
+$ sudo systemctl status docker
+```
+$ docker version
+```
+$ sudo usermod -a -G docker ec2-user && newgrp docker
+```
+$ sudo docker run --name clarusway -i -t ubuntu /bin/bash
+```
+
+$ docker container prune
+```
+$ docker volume prune
+```
+$ Çalışan dockerı stop etmeden çıkma kontrol+p+q 
+
+```
+$ docker container stop 630 f67
+$ docker container rm 630 f67
+```
+
+$ docker run --name clarusway -i -t ubuntu /bin/bash
+$ docker ps -a
+$ docker start 4e6
+$ docker ps
+$ docker ps -a
+$ docker start clarus
+$ docker stop 4e6 && docker ps -a
+$ docker attach clarus
+$ docker inspect clarus
+$ docker rm
+```
+volume
+```
+$ docker volume create
+```
+$ docker volume inspect
+```
+$ docker volume ls
+```
+$ docker volume prune
+```
+$ docker volume rm
+
+image
+```
+$ docker image ls  &  docker image
+```
+$ docker image pull ubuntu
+```
+$ docker run -it ubuntu && cat /etc/os-release
+```
+$ docker image pull ubuntu:18.04
+```
+$ docker search ubuntu
+```
+$ docker build -t "jasonhub77/jason-app:1.0" .
+```
+docker run -d --name welcome -p 80:80 jasonhub77/jason-app:1.0
+```
+
+Docker compose
+
+```bash
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" \
+-o /usr/local/bin/docker-compose
+```
+
+- Apply executable permissions to the binary:
+
+```bash
+sudo chmod +x /usr/local/bin/docker-compose
+```
+
+- Check if the `Docker Compose`is working. Should see something like `docker-compose version 1.26.2, build 1110ad01`
+
+```bash
+docker-compose --version
+
+locale docker indirmemiz gerekiyor mu?
+
+https://labs.play-with-docker.com/
+
+https://hub.docker.com/repositories
+
+docker run -d -p 8600:8080 bharathshetty4/supermario
